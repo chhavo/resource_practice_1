@@ -35,19 +35,20 @@ class DirectorsController < ApplicationController
 
   def edit_form
     @director = Director.find(params[:id])
+    render("edit_form")
   end
 
   def update_row
     @director = Director.find(params[:id])
 
-    @director.dob = params[":dob"]
-    @director.name = params[":name"]
-    @director.bio = params[":bio"]
-    @director.image_url = params[":image_url"]
+    @director.dob = params['dob']
+    @director.name = params['name']
+    @director.bio = params['bio']
+    @director.image_url = params['image_url']
 
     @director.save
 
-    render("show")
+    render("show_details")
   end
 
   def destroy

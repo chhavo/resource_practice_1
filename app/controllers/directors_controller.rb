@@ -3,8 +3,9 @@ class DirectorsController < ApplicationController
     @directors = Director.all
   end
 
-  def show
+  def show_details
     @director = Director.find(params[:id])
+    render("show_details")
   end
 
   def new_form
